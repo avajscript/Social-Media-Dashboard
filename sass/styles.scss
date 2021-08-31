@@ -1,3 +1,23 @@
+// Variables
+
+$background-color: white;
+$top-background-color: hsl(225, 100%, 98%);
+$card-background-color: hsl(227, 47%, 96%);
+$heading-color: hsl(228, 12%, 44%);
+$text-content-color: hsl(230, 17%, 14%);
+$toggle-color: hsl(230, 22%, 74%);
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+// Mixins
+@mixin drawTriangle() {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  display: inline-block;
+  margin-bottom: 3px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,4 +25,117 @@
 
 body {
   font-family: Inter, sans-serif;
+}
+
+h1 {
+  color: $text-content-color;
+}
+p {
+  color: $heading-color;
+  font-weight: 700;
+}
+.navbar {
+  background-color: $top-background-color;
+  padding: 40px 20px;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.black-line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin: 2rem 0;
+}
+
+.toggle-icon {
+  width: 55px;
+  border-radius: 3rem;
+  background-color: $toggle-color;
+  padding: 3px;
+  float: right;
+  cursor: pointer;
+}
+.toggle-circle {
+  background-color: $background-color;
+  border-radius: 4rem;
+  height: 20px;
+  width: 20px;
+  float: right;
+}
+
+.social-grid-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.social-grid-item {
+  background-color: $card-background-color;
+  border-radius: 0.5rem;
+  border-top: 5px solid blue;
+  padding: 2rem 5rem;
+  text-align: center;
+  h1 {
+    font-size: 4rem;
+  }
+  .middle-text {
+    margin: 2rem 0;
+    p {
+      font-weight: 400;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+.fab {
+  margin-right: 0.5rem;
+}
+
+// Reusable
+.up-today {
+  color: $lime-green;
+  display: inline-block;
+}
+.down-today {
+  color: $bright-red;
+  display: inline-block;
+}
+.arrow-up {
+  border-bottom: 5px solid $lime-green;
+  @include drawTriangle();
+}
+.arrow-down {
+  border-top: 5px solid $bright-red;
+  @include drawTriangle();
+}
+.inline {
+  display: inline-block;
+}
+.mobile-flex-container {
+  display: flex;
+}
+
+.mobile-flex {
+  flex: 1;
+  flex-basis: 50%;
+}
+
+// End of reusable
+
+@media screen and (min-width: 1052px) {
+  .mobile {
+    display: none;
+  }
+  // Reusable
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex {
+    flex: 1;
+    flex-basis: 50%;
+  }
+
+  // End of reusable
 }
