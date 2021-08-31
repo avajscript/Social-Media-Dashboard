@@ -18,7 +18,7 @@ p {
 
 .navbar {
   background-color: #f5f7ff;
-  padding: 40px 20px;
+  padding: 40px 20px 6rem 20px;
   border-radius: 0 0 2rem 2rem;
 }
 
@@ -44,6 +44,13 @@ p {
   height: 20px;
   width: 20px;
   float: right;
+}
+
+.social-grid-container {
+  position: relative;
+  top: -3rem;
+  display: grid;
+  gap: 2rem;
 }
 
 .social-grid-container {
@@ -117,6 +124,33 @@ p {
 .mobile-flex {
   flex: 1;
   flex-basis: 50%;
+}
+
+.fa-facebook-square {
+  color: #198ff5;
+}
+
+.fa-twitter {
+  color: #1ca0f2;
+}
+
+.fa-instagram {
+  background: -webkit-gradient(linear, left bottom, right top, from(#fdc468), to(#df4996));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube {
+  color: white;
+  background-color: #c4032a;
+  margin: 0;
+}
+
+.youtube-wrapper {
+  display: inline-block;
+  background-color: #c4032a;
+  padding: 3px;
+  border-radius: 4rem;
 }
 
 @media screen and (min-width: 1052px) {
