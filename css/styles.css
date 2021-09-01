@@ -277,23 +277,11 @@ p {
   }
   .social-grid-container {
     display: grid;
-    grid-template-areas: "a b c d";
+    grid-template-columns: repeat(4, 1fr);
   }
   .social-grid-container .social-grid-item {
     display: inline-block;
     padding: 1rem;
-  }
-  .social-grid-container .social-grid-item:nth-of-type(1) {
-    grid-area: a;
-  }
-  .social-grid-container .social-grid-item:nth-of-type(1) {
-    grid-area: b;
-  }
-  .social-grid-container .social-grid-item:nth-of-type(1) {
-    grid-area: c;
-  }
-  .social-grid-container .social-grid-item:nth-of-type(1) {
-    grid-area: d;
   }
   .analytics-grid-container {
     display: grid;
