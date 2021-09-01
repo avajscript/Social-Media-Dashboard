@@ -1,11 +1,12 @@
 // Variables
-
-$background-color: white;
-$top-background-color: hsl(225, 100%, 98%);
-$card-background-color: hsl(227, 47%, 96%);
-$heading-color: hsl(228, 12%, 44%);
-$text-content-color: hsl(230, 17%, 14%);
-$toggle-color: hsl(230, 22%, 74%);
+:root {
+  --background-color: white;
+  --top-background-color: hsl(225, 100%, 98%);
+  --card-background-color: hsl(227, 47%, 96%);
+  --heading-color: hsl(228, 12%, 44%);
+  --text-content-color: hsl(230, 17%, 14%);
+  --toggle-color: hsl(230, 22%, 74%);
+}
 $lime-green: hsl(163, 72%, 41%);
 $bright-red: hsl(356, 69%, 56%);
 $dark-red: hsl(348, 97%, 39%);
@@ -28,15 +29,18 @@ body {
   font-family: Inter, sans-serif;
 }
 
+.main {
+  background-color: var(--background-color);
+}
 h1 {
-  color: $text-content-color;
+  color: var(--text-content-color);
 }
 p {
-  color: $heading-color;
+  color: var(--heading-color);
   font-weight: 700;
 }
 .navbar {
-  background-color: $top-background-color;
+  background-color: var(--top-background-color);
   padding: 40px 2rem 6rem 2rem;
   border-radius: 0 0 2rem 2rem;
 }
@@ -51,16 +55,29 @@ p {
 .toggle-icon {
   width: 55px;
   border-radius: 3rem;
-  background-color: $toggle-color;
+  background-color: var(--toggle-color);
   padding: 3px;
-  float: right;
   cursor: pointer;
+  &:hover {
+    background: linear-gradient(
+      to right,
+      hsl(210, 40%, 38%),
+      hsl(146, 68%, 55%)
+    );
+  }
 }
 .toggle-circle {
-  background-color: $background-color;
+  background-color: var(--background-color);
   border-radius: 4rem;
   height: 20px;
   width: 20px;
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.color-toggle {
+  background: linear-gradient(to right, hsl(210, 40%, 38%), hsl(146, 68%, 55%));
 }
 .content-wrapper {
   width: 90%;
@@ -77,11 +94,12 @@ p {
 }
 
 .social-grid-item {
-  background-color: $card-background-color;
+  background-color: var(--card-background-color);
   border-radius: 0.5rem;
-  border-top: 5px solid blue;
+  border-top: 5px solid hsl(208, 92%, 53%);
   padding: 2rem 5rem;
   text-align: center;
+  cursor: pointer;
   h1 {
     font-size: 4rem;
   }
@@ -91,6 +109,18 @@ p {
       font-weight: 400;
       letter-spacing: 5px;
     }
+  }
+  &:nth-of-type(3) {
+    border-top: 5px solid;
+    border-image: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+      1;
+  }
+
+  &:nth-of-type(4) {
+    border-top: 5px solid $dark-red;
+  }
+  &:hover {
+    background-color: hsl(230, 22%, 74%);
   }
 }
 
@@ -138,10 +168,17 @@ p {
   float: right;
 }
 
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 // End of reusable
 
 .fa-facebook-square {
   color: hsl(208, 92%, 53%);
+  background-color: var(--background-color);
 }
 
 .fa-twitter {
@@ -161,7 +198,7 @@ p {
 }
 
 .fa-youtube {
-  color: white;
+  color: var(--background-color);
   background-color: hsl(348, 97%, 39%);
   margin: 0;
 }
@@ -186,9 +223,10 @@ p {
 }
 
 .analytics-grid-item {
-  background-color: $card-background-color;
+  background-color: var(--card-background-color);
   border-radius: 0.5rem;
   padding: 30px;
+  cursor: pointer;
   .mobile-flex-container:nth-of-type(1) {
     margin-bottom: 2rem;
     .mobile-flex:nth-of-type(2) {
@@ -203,6 +241,9 @@ p {
       align-items: flex-end;
       justify-content: flex-end;
     }
+  }
+  &:hover {
+    background-color: hsl(230, 22%, 74%);
   }
 }
 
