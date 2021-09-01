@@ -37,7 +37,7 @@ p {
 }
 .navbar {
   background-color: $top-background-color;
-  padding: 40px 20px 6rem 20px;
+  padding: 40px 2rem 6rem 2rem;
   border-radius: 0 0 2rem 2rem;
 }
 
@@ -63,17 +63,18 @@ p {
   width: 20px;
   float: right;
 }
+.content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
 
 .social-grid-container {
   position: relative;
   top: -3rem;
   display: grid;
   gap: 2rem;
-}
-
-.social-grid-container {
-  margin: 0 auto;
-  width: 90%;
+  width: 100%;
 }
 
 .social-grid-item {
@@ -123,8 +124,13 @@ p {
 }
 
 .mobile-flex {
+  display: flex;
   flex: 1;
   flex-basis: 50%;
+}
+
+.float-right {
+  float: right;
 }
 
 // End of reusable
@@ -161,9 +167,78 @@ p {
   border-radius: 4rem;
 }
 
+.overview-header {
+  margin-bottom: 2rem;
+  h1 {
+    color: hsl(228, 12%, 44%);
+    font-size: 2.3rem;
+  }
+}
+
+.analytics-grid-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.analytics-grid-item {
+  background-color: $card-background-color;
+  border-radius: 0.5rem;
+  padding: 30px;
+  .mobile-flex-container:nth-of-type(1) {
+    margin-bottom: 2rem;
+    .mobile-flex:nth-of-type(2) {
+      justify-content: flex-end;
+    }
+  }
+
+  .mobile-flex-container:nth-of-type(2) {
+    .mobile-flex:nth-of-type(2) {
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+}
+
 @media screen and (min-width: 1052px) {
   .mobile {
     display: none;
+  }
+  .black-line {
+    display: none;
+  }
+  .navbar {
+    padding: 40px 10% 12rem 10%;
+  }
+  .content-wrapper {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .social-grid-container {
+    display: grid;
+    grid-template-areas: "a b c d";
+    .social-grid-item {
+      display: inline-block;
+      padding: 1rem;
+    }
+    .social-grid-item:nth-of-type(1) {
+      grid-area: a;
+    }
+    .social-grid-item:nth-of-type(1) {
+      grid-area: b;
+    }
+    .social-grid-item:nth-of-type(1) {
+      grid-area: c;
+    }
+    .social-grid-item:nth-of-type(1) {
+      grid-area: d;
+    }
+  }
+
+  .analytics-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
   // Reusable
   .flex-container {
@@ -178,4 +253,10 @@ p {
   }
 
   // End of reusable
+}
+
+@media screen and (min-width: 1252px) {
+  .social-grid-item {
+    padding: 2rem !important;
+  }
 }
